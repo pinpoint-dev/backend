@@ -18,6 +18,7 @@ class Device(models.Model):
     name = models.CharField(max_length=50)
     key = models.CharField(max_length=50, null=True, blank=True)
     owner = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     type = models.CharField(max_length=7)
     location = models.CharField(max_length=50, null=True, blank=True)
     last_seen = models.DateTimeField(auto_now=True)
